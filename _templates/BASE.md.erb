@@ -1,12 +1,10 @@
-[![StepSecurity Maintained Action](https://raw.githubusercontent.com/step-security/maintained-actions-assets/main/assets/maintained-action-banner.png)](https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions)
-
 <!--
 WARNING: This file is generated, do not edit! Edit _templates/BASE.md.erb instead.
 -->
 
 # Snyk GitHub Actions
 
-![](https://github.com/step-security/snyk-actions/workflows/Generate%20Snyk%20GitHub%20Actions/badge.svg)
+![](https://github.com/snyk/actions/workflows/Generate%20Snyk%20GitHub%20Actions/badge.svg)
 
 A set of [GitHub Action](https://github.com/features/actions) for using [Snyk](https://snyk.co/SnykGH) to check for
 vulnerabilities in your GitHub projects. A different action is required depending on which language or build tool
@@ -14,31 +12,8 @@ you are using.
 
 ## Supported Actions
 
-
-- [CocoaPods](cocoapods)
-- [elixir-1.18](elixir-1.18)
-- [Golang](golang)
-- [Gradle](gradle)
-- [gradle-8-jdk17](gradle-8-jdk17)
-- [gradle-9-jdk17](gradle-9-jdk17)
-- [gradle-8-jdk21](gradle-8-jdk21)
-- [gradle-9-jdk21](gradle-9-jdk21)
-- [gradle-8-jdk24](gradle-8-jdk24)
-- [gradle-9-jdk24](gradle-9-jdk24)
-- [Maven](maven)
-- [Maven-3-jdk-11](maven-3-jdk-11)
-- [Maven-3-jdk-17](maven-3-jdk-17)
-- [Maven-3-jdk-21](maven-3-jdk-21)
-- [Maven-3-jdk-24](maven-3-jdk-24)
-- [Node](node)
-- [PHP](php)
-- [Python](python)
-- [Python-3.9](python-3.9)
-- [Python-3.10](python-3.10)
-- [Python-3.11](python-3.11)
-- [Python-3.12](python-3.12)
-- [Ruby](ruby)
-- [SBT1.10.0-Scala3.4.2](sbt1.10.0-scala3.4.2)
+<% @variants.each do | variant | %>
+- [<%= variant %>](<%= variant.downcase %>)<% end %>
 - [Docker](docker)
 - [Infrastructure as Code](iac)
 - [Setup](setup)
@@ -54,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
-        uses: step-security/snyk-actions/node@master
+        uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 ```
@@ -70,7 +45,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
-        uses: step-security/snyk-actions/node@master
+        uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
@@ -83,7 +58,7 @@ Note that GitHub Actions will not pass on secrets set in the repository to forks
 
 ### Bring your own development environment
 
-The per-language Actions automatically install all the required development tools for Snyk to determine the correct dependencies and hence vulnerabilities from different language environments. If you have a workflow where you already have those installed then you can instead use the `step-security/snyk-actions/setup` Action to just install [Snyk CLI][cli-gh]:
+The per-language Actions automatically install all the required development tools for Snyk to determine the correct dependencies and hence vulnerabilities from different language environments. If you have a workflow where you already have those installed then you can instead use the `snyk/actions/setup` Action to just install [Snyk CLI][cli-gh]:
 
 ```yaml
 name: Snyk example
@@ -93,7 +68,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: step-security/snyk-actions/setup@master
+      - uses: snyk/actions/setup@master
       - uses: actions/setup-go@v1
         with:
           go-version: '1.13'
@@ -138,7 +113,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
-        uses: step-security/snyk-actions/node@master
+        uses: snyk/actions/node@master
         continue-on-error: true
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
@@ -158,26 +133,14 @@ This will:
 - Generate corresponding test workflows in `.github/workflows/` for each variant
 - Update the main README with the list of supported variants
 
-
+<% if @deprecated_variants && !@deprecated_variants.empty? %>
 ## Deprecated Actions
 
 The following actions are deprecated and no longer supported by Snyk or the downstream provider. Please see the [Supported Actions](#supported-actions) section above for alternatives. If you need an action that is not currently supported, we welcome pull requests to add new language support.
 
-
-- [dotNET](dotnet)
-- [Gradle-jdk11](gradle-jdk11)
-- [Gradle-jdk12](gradle-jdk12)
-- [Gradle-jdk14](gradle-jdk14)
-- [Gradle-jdk16](gradle-jdk16)
-- [Gradle-jdk17](gradle-jdk17)
-- [Gradle-jdk21](gradle-jdk21)
-- [Maven-3-jdk-20](maven-3-jdk-20)
-- [Maven-3-jdk-22](maven-3-jdk-22)
-- [Python-3.6](python-3.6)
-- [Python-3.7](python-3.7)
-- [Python-3.8](python-3.8)
-- [Scala](scala)
-
+<% @deprecated_variants.each do | variant | %>
+- [<%= variant %>](<%= variant.downcase %>)<% end %>
+<% end %>
 
 ## Contributing
 
