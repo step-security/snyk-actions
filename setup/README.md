@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v6
     - uses: step-security/snyk-actions/setup@v1
-    - uses: actions/setup-go@v1
+    - uses: actions/setup-go@v6
       with:
         go-version: "1.13"
     - name: Snyk monitor 
@@ -58,7 +58,7 @@ jobs:
       id: snyk
       with:
         snyk-version: v1.391.0
-    - uses: actions/setup-go@v1
+    - uses: actions/setup-go@v6
       with:
         go-version: "1.13"
     - name: Snyk version

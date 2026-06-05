@@ -49,7 +49,7 @@ esac
     echo export SNYK_INTEGRATION_NAME=\"$GH_ACTIONS\"
     echo export SNYK_INTEGRATION_VERSION=\"setup \(${2}\)\"
     echo export FORCE_COLOR=2
-    echo eval snyk-${PREFIX} \$@
+    echo "exec snyk-${PREFIX} \"\$@\""
 } > snyk
 
 if ! command -v "$SUDO_CMD" &> /dev/null; then
