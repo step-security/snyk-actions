@@ -1,3 +1,5 @@
-## Reporting Security Issues
+# Security Policy
 
-To report a security vulnerability to us, please see https://docs.snyk.io/snyk-data-and-governance/reporting-security-issues.
+## Reporting a Vulnerability
+
+Please report security vulnerabilities to security@stepsecurity.io

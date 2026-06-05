@@ -1,3 +1,5 @@
+[![StepSecurity Maintained Action](https://raw.githubusercontent.com/step-security/maintained-actions-assets/main/assets/maintained-action-banner.png)](https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions)
+
 # Snyk Infrastructure as Code Action
 
 A [GitHub Action](https://github.com/features/actions) for using [Snyk](https://snyk.io) to check for
@@ -12,9 +14,9 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
       - name: Run Snyk to check Kubernetes manifest file for issues
-        uses: snyk/actions/iac@master
+        uses: step-security/snyk-actions/iac@v1
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 ```
@@ -46,9 +48,9 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
       - name: Run Snyk to check Kubernetes manifest file for issues
-        uses: snyk/actions/iac@master
+        uses: step-security/snyk-actions/iac@v1
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
@@ -65,9 +67,9 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
       - name: Run Snyk to check Kubernetes manifest file for issues
-        uses: snyk/actions/iac@master
+        uses: step-security/snyk-actions/iac@v1
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
@@ -84,9 +86,9 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
       - name: Run Snyk to check Kubernetes manifest file for issues
-        uses: snyk/actions/iac@master
+        uses: step-security/snyk-actions/iac@v1
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
@@ -102,9 +104,9 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
       - name: Run Snyk to check Kubernetes manifest file for issues
-        uses: snyk/actions/iac@master
+        uses: step-security/snyk-actions/iac@v1
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
@@ -122,16 +124,16 @@ jobs:
   snyk:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
       - name: Run Snyk to check configuration files for security issues
         # Snyk can be used to break the build when it detects security issues.
         # In this case we want to upload the issues to GitHub Code Scanning
         continue-on-error: true
-        uses: snyk/actions/iac@master
+        uses: step-security/snyk-actions/iac@v1
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: snyk.sarif
 ```

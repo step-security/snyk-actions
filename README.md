@@ -52,9 +52,9 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v6
       - name: Run Snyk to check for vulnerabilities
-        uses: step-security/snyk-actions/node@master
+        uses: step-security/snyk-actions/node@v1
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 ```
@@ -68,9 +68,9 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v6
       - name: Run Snyk to check for vulnerabilities
-        uses: step-security/snyk-actions/node@master
+        uses: step-security/snyk-actions/node@v1
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
@@ -92,8 +92,8 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: step-security/snyk-actions/setup@master
+      - uses: actions/checkout@v6
+      - uses: step-security/snyk-actions/setup@v1
       - uses: actions/setup-go@v1
         with:
           go-version: '1.13'
@@ -136,9 +136,9 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v6
       - name: Run Snyk to check for vulnerabilities
-        uses: step-security/snyk-actions/node@master
+        uses: step-security/snyk-actions/node@v1
         continue-on-error: true
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
@@ -178,19 +178,4 @@ The following actions are deprecated and no longer supported by Snyk or the down
 - [Python-3.8](python-3.8)
 - [Scala](scala)
 
-
-## Contributing
-
-To ensure the long-term stability and quality of this project, we are moving to a closed-contribution model effective August 2025. This change allows our core team to focus on a centralized development roadmap and rigorous quality assurance, which is essential for a component with such extensive usage.
-
-All of our development will remain public for transparency. We thank the community for its support and valuable contributions.
-
-## Getting Support
-
-GitHub issues have been disabled on this repository as part of our move to a closed-contribution model. The Snyk support team does not actively monitor GitHub issues on any Snyk development project.
-
-For help with Snyk products, please use the [Snyk support page](https://support.snyk.io/), which is the fastest way to get assistance.
-
-[cli-gh]: https://github.com/snyk/snyk 'Snyk CLI'
-[cli-ref]: https://docs.snyk.io/snyk-cli/cli-reference 'Snyk CLI Reference documentation'
 

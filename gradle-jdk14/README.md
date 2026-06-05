@@ -2,6 +2,8 @@
 WARNING: This file is generated, do not edit! Edit _templates/README.md.erb instead.
 -->
 
+[![StepSecurity Maintained Action](https://raw.githubusercontent.com/step-security/maintained-actions-assets/main/assets/maintained-action-banner.png)](https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions)
+
 # Snyk Gradle (jdk14)  Action
 
 > [!WARNING]
@@ -19,9 +21,9 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v6
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/gradle-jdk14@master
+        uses: step-security/snyk-actions/gradle-jdk14@v1
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 ```
@@ -45,9 +47,9 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v6
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/gradle-jdk14@master
+        uses: step-security/snyk-actions/gradle-jdk14@v1
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
@@ -80,9 +82,9 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v6
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/gradle-jdk14@master
+        uses: step-security/snyk-actions/gradle-jdk14@v1
         continue-on-error: true # To make sure that SARIF upload gets called
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}

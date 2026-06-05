@@ -1,3 +1,5 @@
+[![StepSecurity Maintained Action](https://raw.githubusercontent.com/step-security/maintained-actions-assets/main/assets/maintained-action-banner.png)](https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions)
+
 # Snyk Setup Action
 
 A [GitHub Action](https://github.com/features/actions) for installing [Snyk](https://snyk.co/SnykGH) to check for
@@ -12,8 +14,8 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: snyk/actions/setup@master
+    - uses: actions/checkout@v6
+    - uses: step-security/snyk-actions/setup@v1
     - uses: actions/setup-go@v1
       with:
         go-version: "1.13"
@@ -51,8 +53,8 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: snyk/actions/setup@master
+    - uses: actions/checkout@v6
+    - uses: step-security/snyk-actions/setup@v1
       id: snyk
       with:
         snyk-version: v1.391.0

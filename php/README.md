@@ -2,6 +2,8 @@
 WARNING: This file is generated, do not edit! Edit _templates/README.md.erb instead.
 -->
 
+[![StepSecurity Maintained Action](https://raw.githubusercontent.com/step-security/maintained-actions-assets/main/assets/maintained-action-banner.png)](https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions)
+
 # Snyk PHP Action
 
 
@@ -18,9 +20,9 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v6
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/php@master
+        uses: step-security/snyk-actions/php@v1
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 ```
@@ -44,9 +46,9 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v6
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/php@master
+        uses: step-security/snyk-actions/php@v1
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
@@ -79,9 +81,9 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v6
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/php@master
+        uses: step-security/snyk-actions/php@v1
         continue-on-error: true # To make sure that SARIF upload gets called
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
