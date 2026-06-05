@@ -94,7 +94,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: step-security/snyk-actions/setup@v1
-      - uses: actions/setup-go@v1
+      - uses: actions/setup-go@v6
         with:
           go-version: '1.13'
       - name: Snyk monitor
@@ -177,5 +177,3 @@ The following actions are deprecated and no longer supported by Snyk or the down
 - [Python-3.7](python-3.7)
 - [Python-3.8](python-3.8)
 - [Scala](scala)
-
-
