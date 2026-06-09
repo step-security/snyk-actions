@@ -22,7 +22,7 @@ jobs:
 ```
 
 In order to use the Snyk Infrastructure as Code Test Action, you will need to have a Snyk API token. 
-More details in [Getting Your Snyk Token](https://github.com/snyk/actions#getting-your-snyk-token), or you can [sign up for free](https://snyk.io/login).  
+More details in [Getting Your Snyk Token](https://github.com/step-security/snyk-actions#getting-your-snyk-token), or you can [sign up for free](https://snyk.io/login).  
 
 
 The Snyk Infrastructure as Code Action has properties which are passed to the underlying image. These are

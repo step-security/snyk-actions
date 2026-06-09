@@ -52,7 +52,7 @@ jobs:
           - ruby
           - sbt1.10.0-scala3.4.2
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         # This looks odd, but the `matrix.variant` as input in `uses` is not supported by Github.
         # Therefore, we must add every step as a conditional instead, if we don't want to generate an
         # individual workflow for each variant.

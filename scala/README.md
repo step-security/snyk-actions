@@ -6,9 +6,6 @@ WARNING: This file is generated, do not edit! Edit _templates/README.md.erb inst
 
 # Snyk Scala Action
 
-> [!WARNING]
-> This action is deprecated and no longer supported by Snyk. Please consult the [docs](../README.md) for alternatives.
-
 A [GitHub Action](https://github.com/features/actions) for using [Snyk](https://snyk.co/SnykGH) to check for
 vulnerabilities in your Scala projects. This Action is based on the [Snyk CLI][cli-gh] and you can use [all of its options and capabilities][cli-ref] with the `args`.
 
@@ -95,8 +92,6 @@ jobs:
         with:
           sarif_file: snyk.sarif
 ```
-
-Made with 💜 by Snyk
 
 [cli-gh]: https://github.com/snyk/snyk 'Snyk CLI'
 [cli-ref]: https://docs.snyk.io/snyk-cli/cli-reference 'Snyk CLI Reference documentation'

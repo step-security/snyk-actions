@@ -72,7 +72,7 @@ jobs:
       uses: step-security/snyk-actions/docker@v1
       env:
         # In order to use the Snyk Action you will need to have a Snyk API token.
-        # More details in https://github.com/snyk/actions#getting-your-snyk-token
+        # More details in https://github.com/step-security/snyk-actions#getting-your-snyk-token
         # or you can signup for free at https://snyk.io/login
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:

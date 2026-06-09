@@ -177,3 +177,8 @@ The following actions are deprecated and no longer supported by Snyk or the down
 - [Python-3.7](python-3.7)
 - [Python-3.8](python-3.8)
 - [Scala](scala)
+
+
+[cli-gh]: https://github.com/snyk/snyk 'Snyk CLI'
+[cli-ref]: https://docs.snyk.io/snyk-cli/cli-reference 'Snyk CLI Reference documentation'
+
