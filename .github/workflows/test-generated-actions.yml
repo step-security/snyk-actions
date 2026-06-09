@@ -52,7 +52,12 @@ jobs:
           - ruby
           - sbt1.10.0-scala3.4.2
     steps:
-      - uses: actions/checkout@v6
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         # This looks odd, but the `matrix.variant` as input in `uses` is not supported by Github.
         # Therefore, we must add every step as a conditional instead, if we don't want to generate an
         # individual workflow for each variant.

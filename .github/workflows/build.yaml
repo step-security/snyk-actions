@@ -23,7 +23,12 @@ jobs:
     name: Setup Action with Ubuntu
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
       - name: Set up Snyk CLI
         uses: ./setup/
       - name: snyk version
@@ -35,7 +40,7 @@ jobs:
     container:
       image: alpine:latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
       - name: Install dependencies
         run: apk update && apk add curl bash
       - name: Set up Snyk CLI
@@ -51,7 +56,7 @@ jobs:
     container:
       image: debian:latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
       - name: Install curl
         run: apt-get update && apt-get install curl --yes
       - name: Set up Snyk CLI
@@ -63,7 +68,12 @@ jobs:
     name: Setup Action with Macos
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v6
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
       - name: Install dependencies
         run: brew install coreutils
       - name: Set up Snyk CLI
