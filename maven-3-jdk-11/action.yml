@@ -64,7 +64,7 @@ runs:
       shell: bash
 
     - name: Run Snyk scan
-      uses: docker://snyk/snyk:maven-3-jdk-11
+      uses: docker://snyk/snyk:maven-3-jdk-11@sha256:51b85ba426841fb372c95b5e3e3bdabc69cadacc1eaf25f320d9911378bb3169
       env:
         FORCE_COLOR: 2
         SNYK_INTEGRATION_NAME: GITHUB_ACTIONS

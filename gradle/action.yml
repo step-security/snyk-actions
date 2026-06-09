@@ -64,7 +64,7 @@ runs:
       shell: bash
 
     - name: Run Snyk scan
-      uses: docker://snyk/snyk:gradle
+      uses: docker://snyk/snyk:gradle@sha256:304ae6c3a5551687def93d3e114c1e73061401d7003ee55bd86eabd99795f5c4
       env:
         FORCE_COLOR: 2
         SNYK_INTEGRATION_NAME: GITHUB_ACTIONS

@@ -67,7 +67,7 @@ runs:
       shell: bash
 
     - name: Run Snyk scan
-      uses: docker://snyk/snyk:docker
+      uses: docker://snyk/snyk:docker@sha256:8e31bac0fa29e6ebbe4c1a8be268ae5ff4a55044f3ac2326efff492a5db8c003
       env:
         SNYK_INTEGRATION_NAME: GITHUB_ACTIONS
         SNYK_INTEGRATION_VERSION: docker

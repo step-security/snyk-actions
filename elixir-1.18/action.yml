@@ -64,7 +64,7 @@ runs:
       shell: bash
 
     - name: Run Snyk scan
-      uses: docker://snyk/snyk:elixir-1.18
+      uses: docker://snyk/snyk:elixir-1.18@sha256:9d1968977d8d58ce16d5927dd569a443109225d114cfa16a06bab37609c6b38b
       env:
         FORCE_COLOR: 2
         SNYK_INTEGRATION_NAME: GITHUB_ACTIONS

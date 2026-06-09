@@ -68,7 +68,7 @@ runs:
       run: echo "::warning title=Deprecated Action::The action gradle-jdk16 is deprecated. Please visit Snyk actions at https://github.com/step-security/snyk-actions for a newer version."
 
     - name: Run Snyk scan
-      uses: docker://snyk/snyk:gradle-jdk16
+      uses: docker://snyk/snyk:gradle-jdk16@sha256:d32fdb0ff7a50f742c0744714a1df3c189b3f3336cd378b0cf190581a39ceee7
       env:
         FORCE_COLOR: 2
         SNYK_INTEGRATION_NAME: GITHUB_ACTIONS

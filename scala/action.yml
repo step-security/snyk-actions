@@ -68,7 +68,7 @@ runs:
       run: echo "::warning title=Deprecated Action::The action scala is deprecated. Please visit Snyk actions at https://github.com/step-security/snyk-actions for a newer version."
 
     - name: Run Snyk scan
-      uses: docker://snyk/snyk:scala
+      uses: docker://snyk/snyk:scala@sha256:6cfcd63270b316192bb9fc2b339b1090bac2cdb13dccf6aa776183e46c2700d1
       env:
         FORCE_COLOR: 2
         SNYK_INTEGRATION_NAME: GITHUB_ACTIONS

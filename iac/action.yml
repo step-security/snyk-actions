@@ -67,7 +67,7 @@ runs:
       shell: bash
 
     - name: Run Snyk scan
-      uses: docker://snyk/snyk:alpine
+      uses: docker://snyk/snyk:alpine@sha256:81b6eddf8c1ed74954f77ed6fefec108ac87c975b7052ded692b0341728eaf44
       env:
         SNYK_INTEGRATION_NAME: GITHUB_ACTIONS
         SNYK_INTEGRATION_VERSION: iac
