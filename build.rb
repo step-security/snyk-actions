@@ -7,6 +7,7 @@ require "fileutils"
 
 class ActionGenerator
   VARIANTS = File.readlines('variants').map(&:strip).reject(&:empty?).freeze
+  IMAGE_DIGESTS = File.readlines('image_digests').map(&:strip).reject(&:empty?).map { |l| l.split(' ', 2) }.to_h.freeze
 
   def initialize
     @templates_dir = "_templates"
@@ -70,6 +71,7 @@ class ActionGenerator
         erb.instance_variable_set(:@name, name)
         erb.instance_variable_set(:@ident, ident)
         erb.instance_variable_set(:@is_deprecated, is_deprecated)
+        erb.instance_variable_set(:@image_digest, IMAGE_DIGESTS[clean_variant.downcase])
       end
     end
   end
@@ -82,6 +84,7 @@ class ActionGenerator
       erb.instance_variable_set(:@name, "Node")
       erb.instance_variable_set(:@ident, nil)
       erb.instance_variable_set(:@is_root, true)
+      erb.instance_variable_set(:@image_digest, IMAGE_DIGESTS["node"])
     end
   end
 

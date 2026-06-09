@@ -64,7 +64,7 @@ runs:
       shell: bash
 
     - name: Run Snyk scan
-      uses: docker://snyk/snyk:golang
+      uses: docker://snyk/snyk:golang@sha256:0a6bc2a1bc89d062226d90df05300435f2e21e1858c3af162addef27a1cbec73
       env:
         FORCE_COLOR: 2
         SNYK_INTEGRATION_NAME: GITHUB_ACTIONS

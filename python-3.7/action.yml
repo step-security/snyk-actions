@@ -68,7 +68,7 @@ runs:
       run: echo "::warning title=Deprecated Action::The action python-3.7 is deprecated. Please visit Snyk actions at https://github.com/step-security/snyk-actions for a newer version."
 
     - name: Run Snyk scan
-      uses: docker://snyk/snyk:python-3.7
+      uses: docker://snyk/snyk:python-3.7@sha256:ef7933377ef62ae3c4a8301be6901a7f9d82f78376496f8834c8afee8d8ba563
       env:
         FORCE_COLOR: 2
         SNYK_INTEGRATION_NAME: GITHUB_ACTIONS

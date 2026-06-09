@@ -64,7 +64,7 @@ runs:
       shell: bash
 
     - name: Run Snyk scan
-      uses: docker://snyk/snyk:ruby
+      uses: docker://snyk/snyk:ruby@sha256:c50693306f2b40e153ef1b499222cca7c5ddca635e2fabdb7db53b9de650ed62
       env:
         FORCE_COLOR: 2
         SNYK_INTEGRATION_NAME: GITHUB_ACTIONS

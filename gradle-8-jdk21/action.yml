@@ -64,7 +64,7 @@ runs:
       shell: bash
 
     - name: Run Snyk scan
-      uses: docker://snyk/snyk:gradle-8-jdk21
+      uses: docker://snyk/snyk:gradle-8-jdk21@sha256:38f7ed9b37578dc372e746bba2b914e64f98e49864f0e6198ee7a4474ca01337
       env:
         FORCE_COLOR: 2
         SNYK_INTEGRATION_NAME: GITHUB_ACTIONS

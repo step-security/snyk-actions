@@ -68,7 +68,7 @@ runs:
       run: echo "::warning title=Deprecated Action::The action maven-3-jdk-20 is deprecated. Please visit Snyk actions at https://github.com/step-security/snyk-actions for a newer version."
 
     - name: Run Snyk scan
-      uses: docker://snyk/snyk:maven-3-jdk-20
+      uses: docker://snyk/snyk:maven-3-jdk-20@sha256:9a89d55cc45dedbef8aaf95b79f6e6da8815a73c5f9286f670d7acd1ea4bdf8b
       env:
         FORCE_COLOR: 2
         SNYK_INTEGRATION_NAME: GITHUB_ACTIONS

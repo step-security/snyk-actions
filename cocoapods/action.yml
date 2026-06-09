@@ -64,7 +64,7 @@ runs:
       shell: bash
 
     - name: Run Snyk scan
-      uses: docker://snyk/snyk:cocoapods
+      uses: docker://snyk/snyk:cocoapods@sha256:7e26dadc8fc56f04f24f28f4f20267d63c733e9cb6068918b3c7c6871656a32e
       env:
         FORCE_COLOR: 2
         SNYK_INTEGRATION_NAME: GITHUB_ACTIONS
