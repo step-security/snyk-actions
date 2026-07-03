@@ -1,0 +1,18 @@
+{
+   "schema_version": "1",
+   "onboarding_type": "reimplemented",
+   "archived": false,
+   "maintained_action_name": "step-security/snyk-actions/python-3.12",
+   "upstream_full_repo_name": "snyk/actions",
+   "action_type": "composite",
+   "last_release": {
+     "tag_name": "v1.0.0",
+     "created_at": "2026-06-10T05:06:01Z",
+     "published_at": "2026-06-11T07:55:46Z"
+   },
+   "sync": {
+     "ignore_presets": [
+       "defaults_v1"
+     ]
+   }
+ }
